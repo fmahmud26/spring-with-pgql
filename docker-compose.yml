@@ -1,0 +1,26 @@
+version: "3.8"
+services:
+  app:
+    image: spring-with-pgql-1:v22.8.3
+    container_name: spring-with-pgql-1
+    ports:
+      - "8080:8080"
+    build:
+      context: .
+    depends_on:
+      - db
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres-1:5432/user-db
+      - SPRING_DATASOURCE_USERNAME=user-name
+      - SPRING_DATASOURCE_PASSWORD=user-pass
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+
+  db:
+    image: postgres
+    container_name: postgres-1
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_PASSWORD=user-pass
+      - POSTGRES_USER=user-name
+      - POSTGRES_DB=user-db
