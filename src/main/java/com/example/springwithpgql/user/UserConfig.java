@@ -1,3 +1,4 @@
+/*
 package com.example.springwithpgql.user;
 
 
@@ -11,12 +12,13 @@ import java.util.List;
 
 @Configuration
 public class UserConfig {
-/*    @Bean
+    @Bean
     CommandLineRunner commandLineRunner(UserRepository repository) {
         return args -> {
             User firoz = new User("Firoz Mahmud", LocalDate.of(1994, Month.JULY, 10));
             User alex = new User("Mr. Alex", LocalDate.of(1990, Month.JULY, 10));
             repository.saveAll(List.of(firoz, alex));
         };
-    }*/
+    }
 }
+*/
