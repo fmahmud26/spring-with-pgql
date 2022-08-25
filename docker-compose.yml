@@ -1,13 +1,12 @@
-version: "3.8"
+version: "3.0"
 services:
   app:
-    image: spring-with-pgql-1:v22.8.4
+    image: fmahmud26/spring-with-pgql-1:v22.8.5
     container_name: spring-with-pgql-1
     ports:
       - "8080:8080"
     build:
       context: .
-      dockerfile: Dockerfile
     depends_on:
       - db
     environment:
