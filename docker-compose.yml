@@ -1,14 +1,16 @@
 version: "3.0"
 services:
   app:
-    image: fmahmud26/spring-with-pgql-1:v22.8.6
+    image: fmahmud26/spring-with-pgql-1:v22.8.7
     container_name: spring-with-pgql-1
     networks:
       - spring-pgql-1
     ports:
-      - "8080:8080"
+      - "8000:8080"
     build:
       context: .
+    volumes:
+      - /home/bs689/tmp/docker:/var/lib/docker/tmp
     depends_on:
       - db
     environment:
@@ -23,9 +25,9 @@ services:
     networks:
       - spring-pgql-1
     ports:
-      - "5432:5432"
+      - "5431:5432"
     volumes:
-      - /tmp/postgres/data:/var/lib/postgres/data
+      - /home/bs689/tmp/postgres/data:/var/lib/postgres/data
     environment:
       - POSTGRES_PASSWORD=user-pass
       - POSTGRES_USER=user-name
