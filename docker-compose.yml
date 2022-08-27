@@ -10,7 +10,7 @@ services:
     build:
       context: .
     volumes:
-      - /home/bs689/tmp/docker:/var/lib/docker/tmp
+      - ./spring-with-pgql-1/tmp/docker:/var/lib/docker/tmp
     depends_on:
       - db
     environment:
@@ -27,7 +27,7 @@ services:
     ports:
       - "5431:5432"
     volumes:
-      - /home/bs689/tmp/postgres/data:/var/lib/postgres/data
+      - ./spring-with-pgql-1/tmp/postgres/data:/var/lib/postgres/data
     environment:
       - POSTGRES_PASSWORD=user-pass
       - POSTGRES_USER=user-name
